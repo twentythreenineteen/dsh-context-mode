@@ -1,0 +1,46 @@
+{
+  "name": "dsh-context-mode",
+  "version": "0.1.0",
+  "description": "Mounts the context-mode MCP server (local sandboxed execution and SQLite FTS5 search that keeps tool output out of the context window) as the `context_mode` tool namespace in DeepSeek Harness.",
+  "icon": "icon.svg",
+  "type": "module",
+  "exports": {
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.1.7-rc.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twentythreenineteen/dsh-context-mode.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "mcp",
+    "context-mode",
+    "context-window",
+    "fts5",
+    "sandbox"
+  ],
+  "license": "MIT"
+}

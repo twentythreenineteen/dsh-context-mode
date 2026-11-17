@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "上下文模式 (dsh-context-mode)",
+    "description": "将 context-mode MCP 服务挂载为 `context_mode` 工具命名空间（`mcp__context_mode__*`），提供本地沙箱代码执行和 SQLite FTS5 搜索，把大量工具输出挡在上下文窗口之外。需要 PATH 中有 `context-mode`（`npm i -g context-mode`）。"
+  }
+}

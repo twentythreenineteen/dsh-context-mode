@@ -1,0 +1,33 @@
+# dsh-context-mode bundle patch.
+#
+# Mounts context-mode (https://github.com/mksglu/context-mode) via
+# @deepseek-ai/dsh-mcp-client under the `context_mode` tool namespace
+# (`mcp__context_mode__*`).
+#
+# context-mode keeps bulky tool output out of the LLM context window using a
+# local SQLite FTS5 sandbox. Running `context-mode` with no args starts the
+# MCP server on stdio.
+#
+# To override settings in your profile's cordis.patch.yml, restate the full
+# config under `id: context-mode-mcp` (patches replace a row's config rather
+# than merging). For example, to pin an explicit Node entry point:
+#
+#   - id: context-mode-mcp
+#     config:
+#       serverName: context_mode
+#       transport: stdio
+#       command: node
+#       args:
+#         - C:/Users/you/AppData/Roaming/npm/node_modules/context-mode/cli.bundle.mjs
+#       toolCallTimeoutMs: 120000
+#       failOnStartupError: false
+- insert:
+    - id: context-mode-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: context_mode
+        transport: stdio
+        command: context-mode
+        args: []
+        toolCallTimeoutMs: 120000
+        failOnStartupError: false

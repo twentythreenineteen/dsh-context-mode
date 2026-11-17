@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Context mode (dsh-context-mode)",
+    "description": "Mounts the context-mode MCP server as the `context_mode` tool namespace (`mcp__context_mode__*`), providing local sandboxed code execution and SQLite FTS5 search that keeps bulky tool output out of the context window. Requires `context-mode` on PATH (`npm i -g context-mode`)."
+  }
+}
